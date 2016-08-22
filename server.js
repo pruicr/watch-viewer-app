@@ -29,6 +29,7 @@ app.post('/api/watches', function(req, res) {
     watch.caseSize = req.body.caseSize;
     watch.lugSize = req.body.lugSize;
     watch.bezelColor = req.body.bezelColor;
+    watch.url = req.body.url;
     // save the watch
     watch.save(function(err) {
         if (err) {
@@ -62,6 +63,24 @@ app.put('/api/watches/:watch_id', function(req, res) {
         }
         if (req.body.name) {
             watch.name = req.body.name;
+        }
+        if (req.body.brand) {
+            watch.brand = req.body.brand;
+        }
+        if (req.body.description) {
+            watch.description = req.body.description;
+        }
+        if (req.body.caseSize) {
+            watch.caseSize = req.body.caseSize;
+        }
+        if (req.body.lugSize) {
+            watch.lugSize = req.body.lugSize;
+        }
+        if (req.body.bezelColor) {
+            watch.bezelColor = req.body.bezelColor;
+        }
+        if (req.body.url) {
+            watch.url = req.body.url;
         }
         // save the watch
         watch.save(function(err) {

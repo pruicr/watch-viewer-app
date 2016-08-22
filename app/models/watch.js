@@ -7,7 +7,10 @@ var WatchSchema = new Schema({
     description: String,
     caseSize: Number,
     lugSize: Number,
-    bezelColor: String
+    bezelColor: String,
+    url: String
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Watch', WatchSchema);

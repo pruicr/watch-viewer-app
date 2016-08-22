@@ -12,11 +12,24 @@ watches.config(['$routeProvider', '$locationProvider', function($routeProvider, 
 }]);
 
 watches.controller('mainController', ['$scope', '$http', function($scope, $http) {
+    $scope.formData = {};
     $http.get('/api/watches')
         .success(function(data) {
             $scope.watch = data;
+//            console.log(data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
         });
+    $scope.createWatch = function() {
+        $http.post('/api/watches')
+            .success(function(data) {
+                $scope.formData = {};
+                $scope.watch = data;
+                console.log(data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
 }]);

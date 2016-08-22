@@ -1,9 +1,17 @@
 <div class="container">    
     <div class="row">
-        <div class="col-sm-4" ng-repeat="watch in watch">
+        <div class="col-sm-6 col-md-4" ng-repeat="watch in watch | orderBy: 'createdAt'">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3 class="panel-title">{{watch.name}}</h3>
+                    <h3 class="panel-title text-center">{{watch.name}}</h3>
+                </div>
+                <div class="panel-body">
+                    <img src="{{watch.url}}" height="200px" class="center-block">
+                    <ul>
+                        <li><strong>Case Size:</strong> {{watch.caseSize}}mm</li>
+                        <li><strong>Lug Size:</strong> {{watch.lugSize}}mm</li>
+                        <li><strong>Bezel Color:</strong> {{watch.bezelColor}}</li>
+                    </ul>
                 </div>
             </div>
         </div>
