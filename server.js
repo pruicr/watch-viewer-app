@@ -24,6 +24,11 @@ app.use(methodOverride());
 app.post('/api/watches', function(req, res) {
     var watch = new Watch();
     watch.name = req.body.name;
+    watch.brand = req.body.brand;
+    watch.description = req.body.description;
+    watch.caseSize = req.body.caseSize;
+    watch.lugSize = req.body.lugSize;
+    watch.bezelColor = req.body.bezelColor;
     // save the watch
     watch.save(function(err) {
         if (err) {
@@ -82,11 +87,9 @@ app.delete('/api/watches/:watch_id', function(req, res) {
     });
 });
 
-
-app.get('', function(req, res) {
-    res.sendFile(path.join(__dirname + './public/index.ejs'));
+app.all('*', function(req, res, next) {
+    res.sendFile('/public/index.html', {root: __dirname});
 });
-
 
 app.listen(port, function() {
     console.log('Listening on port ' + port);
