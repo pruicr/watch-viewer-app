@@ -1,0 +1,43 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h2 class="text-center">Add a new Disney watch:</h2>
+            <form name="addForm">
+                <div class="form-group">
+                    <label>Name: </label>
+                    <input type="text" class="form-control" placeholder="Watch Name" ng-model="formData.name" required>
+                </div>
+                <div class="form-group">
+                    <label>Brand: </label>
+                    <input type="text" class="form-control" placeholder="Watch Brand" ng-model="formData.brand">
+                </div>
+                <div class="form-group">
+                    <label>Style: </label>
+                    <input type="text" class="form-control" placeholder="Watch Style" ng-model="formData.style">
+                </div>
+                <div class="form-group">
+                    <label>Image URL: </label>
+                    <input type="text" class="form-control" placeholder="Watch Image URL" ng-model="formData.url" required>
+                </div>
+                <div class="form-group">
+                    <label>Case Size: </label>
+                    <input type="number" class="form-control" placeholder="Watch Case Size" ng-model="formData.caseSize" required>
+                </div>
+                <div class="form-group">
+                    <label>Lug Size: </label>
+                    <input type="number" class="form-control" placeholder="Watch Lug Size" ng-model="formData.lugSize" required>
+                </div>
+                <div class="form-group">
+                    <label>Bezel Color: </label>
+                    <input type="text" class="form-control" placeholder="Watch Bezel Color" ng-model="formData.bezelColor" required>
+                </div>
+                <div class="form-group">
+                    <label>Description: </label>
+                    <textarea type="text" class="form-control" placeholder="Watch Description" ng-model="formData.description" required></textarea>
+                </div>
+                <button class="btn btn-primary btn-block" ng-click="createWatch()" ng-disabled="addForm.$invalid">Add Watch</button>
+            </form>
+        </div>
+    </div>
+</div>

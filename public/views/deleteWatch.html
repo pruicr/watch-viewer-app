@@ -8,12 +8,15 @@
                 <div class="panel-body">
                     <img src="{{watch.url}}" height="200px" class="center-block">
                     <ul>
-                        <li><strong>Watch Style:</strong> {{watch.style}}</li>
                         <li><strong>Case Size:</strong> {{watch.caseSize}}mm</li>
                         <li><strong>Lug Size:</strong> {{watch.lugSize}}mm</li>
                         <li><strong>Bezel Color:</strong> {{watch.bezelColor}}</li>
                     </ul>
                 </div>
+                <form class="text-center">
+                    <input type="checkbox" ng-model="checked" required> Do you really want to remove this watch?
+                    <button class="btn btn-danger btn-block" ng-click="deleteWatch(watch._id)" ng-disabled="!checked">Delete Watch</button>
+                </form>
             </div>
         </div>
     </div>

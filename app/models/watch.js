@@ -8,7 +8,8 @@ var WatchSchema = new Schema({
     caseSize: Number,
     lugSize: Number,
     bezelColor: String,
-    url: String
+    url: String,
+    style: String
 }, {
     timestamps: true
 });
