@@ -10,7 +10,7 @@ var port = process.env.PORT || 3000;
 var app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://test:test@ds013486.mlab.com:13486/disney-watches');
+mongoose.connect('<database>');
 
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
@@ -81,6 +81,9 @@ app.put('/api/watches/:watch_id', function(req, res) {
         }
         if (req.body.url) {
             watch.url = req.body.url;
+        }
+        if (req.body.style) {
+            watch.style = req.body.style;
         }
         // save the watch
         watch.save(function(err) {
